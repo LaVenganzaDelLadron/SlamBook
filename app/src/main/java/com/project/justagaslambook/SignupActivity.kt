@@ -12,6 +12,7 @@ import com.project.justagaslambook.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
 
+    var isPasswordVisible = false
     private lateinit var binding: ActivitySignupBinding
     private val auth = Authentication()
     private val dialog = ShowDialog(this)
@@ -38,7 +39,27 @@ class SignupActivity : AppCompatActivity() {
                 }else {
                     dialog.invalidDialog("Error","Username already exists")
                 }
+            }
+            tvLogin.setOnClickListener {
+                val intent = Intent(this@SignupActivity, LoginActivity::class.java)
+                startActivity(intent)
+            }
 
+            binding.ivTogglePassword.setOnClickListener {
+                isPasswordVisible = !isPasswordVisible
+
+                if (isPasswordVisible) {
+                    // Show password
+                    binding.etPassword.inputType =
+                        android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                    binding.ivTogglePassword.setImageResource(R.drawable.clown)
+                } else {
+                    binding.etPassword.inputType =
+                        android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                    binding.ivTogglePassword.setImageResource(R.drawable.clown)
+                }
+
+                binding.etPassword.setSelection(binding.etPassword.text?.length ?: 0)
             }
         }
     }

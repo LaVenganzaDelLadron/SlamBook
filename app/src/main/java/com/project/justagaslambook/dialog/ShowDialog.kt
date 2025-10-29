@@ -47,11 +47,20 @@ class ShowDialog(private val context: Context) {
             .show()
     }
 
-    fun loadingDialog(title: String): KAlertDialog {
-        val pDialog = KAlertDialog(context, KAlertDialog.PROGRESS_TYPE, isTrue)
-        pDialog.setTitleText(title)
-        pDialog.show()
-        return pDialog
+    fun exitDialog(title: String, message: String, button: String, button1: String, onConfirm: Runnable?) {
+        KAlertDialog(context, KAlertDialog.SUCCESS_TYPE, isTrue)
+            .setTitleText(title)
+            .setContentText(message)
+            .setCancelText(button)
+            .setConfirmText(button1)
+            .cancelButtonColor(R.color.red)
+            .confirmButtonColor(R.color.green)
+            .setConfirmClickListener { dialog ->
+                dialog.dismissWithAnimation()
+                onConfirm?.run()
+            }
+            .show()
     }
+
 
 }

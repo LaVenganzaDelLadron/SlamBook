@@ -182,6 +182,10 @@ class AddFragment : Fragment() {
                 if (neverForgetAnswer.text.isNullOrEmpty()) emptyFields.add("Never Forget")
                 if (guiltyPleasureAnswer.text.isNullOrEmpty()) emptyFields.add("Guilty Pleasure")
 
+                if (phone.text?.length != 11) {
+                    emptyFields.add("Phone number must be 11 digits")
+                }
+
                 if (emptyFields.isNotEmpty()) {
                     android.util.Log.d("AddFragment", "Empty fields: $emptyFields")
 

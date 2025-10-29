@@ -5,7 +5,7 @@ import android.os.Parcelable
 data class User(
     var username: String? = null,
     var password: String? = null,
-    var slambook: ArrayList<SlamBook>? = null
+    var slambook: ArrayList<SlamBook>? = arrayListOf()
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
