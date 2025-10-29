@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.AddFragment">
+
+    <!-- Main container for all content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Horizontal Tabs -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvBasicInformation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Basic Information"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selrctor"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/tvPersonalVibesInformation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vibes Information"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selrctor"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/tvAboutYou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About You"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selrctor"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/tvRandomFun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Random Fun"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_selrctor"
+                    android:layout_marginEnd="10dp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- ViewFlipper Section -->
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <include layout="@layout/basic_information_layout" />
+            <include layout="@layout/personal_vibes_layout" />
+            <include layout="@layout/about_you_layout" />
+            <include layout="@layout/random_fun_layout" />
+
+        </ViewFlipper>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/button_selrctor" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/button_selrctor" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
